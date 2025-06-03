@@ -1,0 +1,28 @@
+.dropdown-wrapper {
+  position: relative;
+  border: '2px solid red';
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  /* left: -10; */
+  background-color: white;
+  border: 2px solid green;
+  padding: 10px;
+  list-style: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 999;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
