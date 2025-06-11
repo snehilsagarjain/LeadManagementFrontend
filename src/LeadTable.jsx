@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import LeadFormModal from './LeadFormModal';
 import styles from './FrontPage.module.css';
 import api from './api';
+<<<<<<< HEAD
 import { useLocation } from 'react-router-dom';
 
 const LeadTable = () => {
@@ -9,6 +10,12 @@ const LeadTable = () => {
     // const user = JSON.parse(localStorage.getItem("user"));
     const location = useLocation();
     const user = location.state?.user;
+=======
+
+const LeadTable = () => {
+
+    const user = JSON.parse(localStorage.getItem("user"));
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
 
     const [refresh, setRefresh] = useState(true);
     const [leads, setLeads] = useState([]);
@@ -34,8 +41,11 @@ const LeadTable = () => {
         { label: "Advertisement", value: "advertisement" },
     ];
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
     useEffect(() => {
         const fetchLeads = async () => {
             try {
@@ -157,8 +167,16 @@ const LeadTable = () => {
                     <button onClick={handleCreateClick} className="mb-4 px-4 py-2 bg-green-600 text-white rounded">+ Create Lead</button>
 
                     <div className="flex justify-between mb-4 items-center">
+<<<<<<< HEAD
                         <input type="text" placeholder="Search leads..." value={searchTerm}
                             className="border px-3 py-2 rounded-md w-full max-w-xs"
+=======
+                        <input
+                            type="text"
+                            placeholder="Search leads..."
+                            className="border px-3 py-2 rounded-md w-full max-w-xs"
+                            value={searchTerm}
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
                             onChange={(e) => {
                                 setSearchTerm(e.target.value);
                                 setCurrentPage(1);
@@ -166,8 +184,18 @@ const LeadTable = () => {
                         />
                         <div className="flex space-x-1">
                             {Array.from({ length: Math.ceil(filteredLeads.length / leadsPerPage) }).map((_, i) => (
+<<<<<<< HEAD
                                 <button key={i} onClick={() => setCurrentPage(i + 1)}
                                     className={`px-3 py-1 rounded ${currentPage === i + 1 ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}> {i + 1}
+=======
+                                <button
+                                    key={i}
+                                    className={`px-3 py-1 rounded ${currentPage === i + 1 ? 'bg-blue-600 text-white' : 'bg-gray-200'
+                                        }`}
+                                    onClick={() => setCurrentPage(i + 1)}
+                                >
+                                    {i + 1}
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
                                 </button>
                             ))}
                         </div>

@@ -15,6 +15,7 @@ export default function ForgotPasswordPage() {
             console.log("OTP Sent Response:", data);
 
             if (data) {
+<<<<<<< HEAD
                 dispatch(otp(data.randomOtp));
                 dispatch(expirytime(data.expirytime));
                 // localStorage.setItem("otp", JSON.stringify(data.randomOtp));
@@ -23,6 +24,13 @@ export default function ForgotPasswordPage() {
                     console.log('163');
                     dispatch(removeexpirytime());
                     // localStorage.removeItem("expirytime");
+=======
+                localStorage.setItem("otp", JSON.stringify(data.randomOtp));
+                localStorage.setItem("expirytime", JSON.stringify(data.expirytime));
+                setTimeout(() => {
+                    console.log('163');
+                    localStorage.removeItem("expirytime");
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
                 }, 300000);
                 alert("OTP Sent to Email!");
             }
@@ -33,8 +41,12 @@ export default function ForgotPasswordPage() {
     };
 
     const onSubmit = async (formData) => {
+<<<<<<< HEAD
         const storedOtp = useSelector((state) => state.login?.otp || null);
         // const storedOtp = JSON.parse(localStorage.getItem("otp"));
+=======
+        const storedOtp = JSON.parse(localStorage.getItem("otp"));
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
         if (formData.otp !== storedOtp) {
             alert("Invalid OTP");
             return;
@@ -49,10 +61,15 @@ export default function ForgotPasswordPage() {
 
             if (data) {
                 alert("Password updated!");
+<<<<<<< HEAD
                 dispatch(removeotp());
                 dispatch(removeexpirytime());
                 // localStorage.removeItem("otp");
                 // localStorage.removeItem("expirytime");
+=======
+                localStorage.removeItem("otp");
+                localStorage.removeItem("expirytime");
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
                 navigate('/login');
             }
         } catch (error) {

@@ -18,9 +18,13 @@ export default function ResetPasswordPage() {
 
         if (formData.oldpassword != null && formData.newpassword != null && formData.oldpassword != formData.newpassword) {
             try {
+<<<<<<< HEAD
                 // let user = JSON.parse(localStorage.getItem('user'));
                 const user = useSelector((state) => state.login?.value || null);
 
+=======
+                let user = JSON.parse(localStorage.getItem('user'));
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
                 const { data } = await api.patch("/user/UpdateUser", {
                     id: user._id,
                     newpassword: formData.newpassword,
@@ -29,8 +33,12 @@ export default function ResetPasswordPage() {
 
                 if (data) {
                     alert("Password updated!");
+<<<<<<< HEAD
                     dispatch(removeotp());
                     // localStorage.removeItem("otp");
+=======
+                    localStorage.removeItem("otp");
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
                     // localStorage.removeItem("expirytime");
                     navigate('/logout');
                     // navigate('/login');

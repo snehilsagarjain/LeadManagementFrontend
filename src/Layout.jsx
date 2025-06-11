@@ -3,8 +3,11 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import styles from './FrontPage.module.css';
 import './Dropdown.css'; // Make sure to create this CSS file
+<<<<<<< HEAD
 import { useSelector, useDispatch } from 'react-redux';
 import { logout, setlogindata } from './Logindata';
+=======
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
 
 const StyledButton = styled.button`
   display: flex; align-items: center; justify-content: center;
@@ -29,6 +32,7 @@ const avatarStyle = {
 };
 
 const TopBar = () => {
+<<<<<<< HEAD
     // const user = JSON.parse(localStorage.getItem('user'));
     console.log("layout33");
     // const user = useSelector((state) => { state.login.value });
@@ -40,6 +44,12 @@ const TopBar = () => {
     console.log("40");
     const dispatch = useDispatch();
     console.log("42");
+=======
+    const user = JSON.parse(localStorage.getItem('user'));
+    const navigate = useNavigate();
+    const [dropdown, setDropdown] = useState(false);
+
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
     return (
         <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', width: '100vw', border: '2px solid orange', overflow: 'hidden' }}>
             {/* Top Navigation */}
@@ -53,15 +63,24 @@ const TopBar = () => {
                     zIndex: '999', padding: '10px',
                 }}
             >
+<<<<<<< HEAD
                 <StyledButton onClick={() => { user ? (user.role == "Admin" ? navigate("/user") : navigate("/lead")) : navigate("/") }}> <b>{"Lead Management Tool".toUpperCase()}</b> </StyledButton>
+=======
+                <StyledButton onClick={() => navigate("/")}> <b>{"Lead Management Tool".toUpperCase()}</b> </StyledButton>
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <button
                         style={{ margin: '5px', color: 'green' }}
                         onClick={() => {
                             if (user) {
+<<<<<<< HEAD
                                 dispatch(logout());
                                 // localStorage.removeItem("user");
                                 // localStorage.removeItem("token");
+=======
+                                localStorage.removeItem("user");
+                                localStorage.removeItem("token");
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
                                 navigate("/logout");
                             } else { navigate("/login"); }
                         }}

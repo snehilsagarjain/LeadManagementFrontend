@@ -3,15 +3,19 @@ import styles from './FrontPage.module.css';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import api from './api';
+<<<<<<< HEAD
 import { useDispatch } from 'react-redux';
 import { setlogindata, token } from './Logindata';
 import { useSelector } from "react-redux";
 import { setAuthToken } from "./api";
 import axios from 'axios';
+=======
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
 export default function LoginPage() {
     // const [isLogin, setIsLogin] = useState(true);
     const { register, handleSubmit, formState: { errors } } = useForm();
     // const onSubmit = data => console.log(data);
+<<<<<<< HEAD
     const dispatch = useDispatch();
     const onSubmit = async (content) => {
         try {
@@ -32,6 +36,19 @@ export default function LoginPage() {
                 setAuthToken(data.token);
                 // console.log(data.role);
                 // console.log(typeof (data.role));
+=======
+    const onSubmit = async (content) => {
+        try {
+            console.log("Submitting:", content);
+            const { data } = await api.post(`/auth/login`, content);
+            console.log("Response:", data);
+            if (data) {
+                console.log(data);
+                localStorage.setItem("user", JSON.stringify(data.userEmail));
+                localStorage.setItem("token", JSON.stringify(data.token));
+                console.log(data.role);
+                console.log(typeof (data.role));
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
                 if (data.userEmail.role == "Admin") {
                     // navigate("/admin"); 
                     navigate("/user");
@@ -44,7 +61,11 @@ export default function LoginPage() {
         }
     };
 
+<<<<<<< HEAD
     // console.log(errors);
+=======
+    console.log(errors);
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
     const navigate = useNavigate();
     return (
         <>
@@ -100,13 +121,21 @@ export default function LoginPage() {
                             {"Forgot Password"}
                         </button>
                     </p>
+<<<<<<< HEAD
                     {"Don't have an account?"}{' '}
+=======
+                    {/* {"Don't have an account?"}{' '}
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
                     <button
                         onClick={() => navigate('/signup')}
                         className="text-green-700 font-medium hover:underline"
                     >
                         {'Sign up'}
+<<<<<<< HEAD
                     </button>
+=======
+                    </button> */}
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
                 </div>
             </div>
             {/* </div> */}

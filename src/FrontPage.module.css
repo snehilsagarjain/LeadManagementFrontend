@@ -12,7 +12,11 @@
 }
 
 .table {
+<<<<<<< HEAD
     border: 2px solid blue;
+=======
+    /* border: 2px solid blue; */
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
     /* margin-left: 3rem;
     margin-right: 3rem; */
     max-width: calc(100vw - 3rem);

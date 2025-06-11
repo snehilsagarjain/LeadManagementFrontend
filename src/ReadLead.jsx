@@ -1,11 +1,17 @@
 import React from "react";
 import styles from './FrontPage.module.css';
 import LeadTable from "./LeadTable";
+<<<<<<< HEAD
 import { useSelector } from 'react-redux';
 
 export default function ReadLead() {
     // const user = JSON.parse(localStorage.getItem("user"));
     const user = useSelector((state) => state.login?.value || null);
+=======
+
+export default function ReadLead() {
+    const user = JSON.parse(localStorage.getItem("user"));
+>>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
     return (
         // <>
         //     <div>
