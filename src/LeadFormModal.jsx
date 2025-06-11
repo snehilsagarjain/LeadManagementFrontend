@@ -7,10 +7,7 @@ import TimePicker from 'react-time-picker';
 import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
 import Select from 'react-select';
-<<<<<<< HEAD
 import api from './api';
-=======
->>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
 
 const LeadFormModal = ({ isOpen, onClose, onSubmit, leadData, isEdit, users }) => {
     const { register, handleSubmit, reset, control, formState: { errors }, setValue } =
@@ -66,11 +63,9 @@ const LeadFormModal = ({ isOpen, onClose, onSubmit, leadData, isEdit, users }) =
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-<<<<<<< HEAD
                 if (users.role === "Admin") {
-=======
-                if (users.roles === "Admin") {
->>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
+                    // if (users.roles === "Admin") {
+
                     const res = await api.get('/user/getAllUsers');
                     const user = res.data;
                     const options = user.map(user => ({
@@ -86,26 +81,13 @@ const LeadFormModal = ({ isOpen, onClose, onSubmit, leadData, isEdit, users }) =
                     setUserOptions([singleOption]);
                     setValue("assignedTo", singleOption); // Pre-set for react-hook-form
                 }
-<<<<<<< HEAD
             } catch (err) { console.error("Error loading users:", err); }
             finally { setLoading(false); }
-=======
-            } catch (err) {
-                console.error("Error loading users:", err);
-            } finally {
-                setLoading(false);
-            }
->>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
         };
 
         fetchUsers();
     }, [users, setValue]);
 
-<<<<<<< HEAD
-    console.log(userOptions);
-=======
-
->>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
     const handleClose = () => {
         reset(); // Clear all fields
         onClose(); // Close modal
@@ -175,10 +157,7 @@ const LeadFormModal = ({ isOpen, onClose, onSubmit, leadData, isEdit, users }) =
                                         // isDisabled={loggedInUser.role !== "admin"} // disable select for non-admins
                                         // isDisabled={roles !== "admin"} // disable select for non-admins
                                         placeholder="AssignedTo"
-<<<<<<< HEAD
                                         styles={customStyles}
-=======
->>>>>>> 7a435aeae27d7848252d531f1415a353c957fd34
                                     />
                                 )}
                             />
