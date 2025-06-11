@@ -1,0 +1,38 @@
+/* FrontPage.module.css */
+
+.frontPageContainer {
+    width: 100vw;
+    height: calc(100vh - 4rem);
+    overflow: hidden;
+    /* border: 2px solid black; */
+}
+
+.responsiveText {
+    font-size: 24px;
+}
+
+.table {
+    border: 2px solid blue;
+    /* margin-left: 3rem;
+    margin-right: 3rem; */
+    max-width: calc(100vw - 3rem);
+}
+
+@media (max-width: 768px) {
+    .responsiveText {
+        font-size: 6px;
+    }
+
+    .frontPageContainer {
+        position: absolute;
+        top: 4.5rem;
+        /* overflow: hidden;
+        height: calc(100vh - 4.5rem); */
+    }
+
+    /* .table {
+        max-width: calc(100vw - 3rem); */
+    /* max-width: 40rem; */
+    /* border: 2px solid red; */
+    /* } */
+}
